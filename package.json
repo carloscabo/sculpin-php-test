@@ -1,0 +1,107 @@
+{
+  "//": "------------------------------------------",
+  "//": " Genral Package.json settings             ",
+  "//": "------------------------------------------",
+  "name"  : "npm_gulp_replacement",
+  "version": "0.0.2",
+  "description": "Assets compilation a-la gulp, without gulp ;)",
+  "homepage": "https://github.com/carloscabo/npm-gulp-replacement",
+  "contributors": [
+    {
+      "name": "Carlos Cabo",
+      "email": "carloscabo@gmail.com",
+      "url": "https://github.com/carloscabo"
+    },
+    {
+      "name": "Victor Ortiz",
+      "email": "kespers@gmail.com",
+      "url": "https://github.com/vortizhe"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/carloscabo/npm-gulp-replacement"
+  },
+  "engines": {
+    "node": ">= 0.10.0"
+  },
+  "devDependencies": {
+    "node-sass"  :"latest",
+    "uglify-js"  :"latest",
+    "nodemon"    :"latest",
+    "npm-run-all":"latest"
+  },
+  "//": "------------------------------------------",
+  "//": " NPM tasks                                ",
+  "//": " Usage: npm run build:css                 ",
+  "//": "------------------------------------------",
+  "scripts": {
+
+    "ngr:install": "npm install node-sass -g && npm install uglify-js -g && npm install nodemon -g && npm install npm-run-all -g && npm link node-sass --save-dev && npm link uglify-js --save-dev && npm link nodemon --save-dev",
+
+    "build:css": "node ngr-assets-compiler.js build_css",
+
+    "build:js" : "node ngr-assets-compiler.js build_js",
+
+    "watch:css": "nodemon --watch tests/src/css -e css,scss -x \"npm run build:css\"",
+    "watch:js" : "nodemon --watch tests/src/js -e js,jsx -x \"npm run build:js\"",
+    "watch:all": "npm-run-all --parallel watch:js watch:css"
+  },
+
+  "//": "------------------------------------------",
+  "//": " Options for Node Gulp Replacement        ",
+  "//": "------------------------------------------",
+  "ngr_options": {
+
+    "//": "------------------------------------------",
+    "//": " Options for JS compilation               ",
+    "//": "------------------------------------------",
+    "scripts": [
+      {
+        "dest": "source/themes/app/holaluz/js/application.min.js",
+        "files": [
+          "source/themes/app/holaluz/js/src/lib/mqbe.js",
+          "source/themes/app/holaluz/js/src/ready.js"
+        ],
+        "//": "------------------------------------------",
+        "//": " Options for Uglify-JS                    ",
+        "//": "------------------------------------------",
+        "options": {
+          "outSourceMap": "source/themes/app/holaluz/js/maps/application.js.map",
+          "sourceRoot": null,
+          "warnings": false,
+          "mangle": {
+            "screw_ie8": false,
+            "cache": null,
+            "except": [ ],
+            "eval": false,
+            "sort": false,
+            "toplevel": false,
+            "keep_fnames": false
+          },
+          "mangleProperties": false
+        }
+      }
+    ],
+
+    "//": "------------------------------------------",
+    "//": " SASS Compilation                         ",
+    "//": "------------------------------------------",
+    "styles": [
+      {
+        "src":  "source/themes/app/holaluz/css/src/application.scss",
+        "dest": "source/themes/app/holaluz/css/application.min.css",
+
+        "//": "------------------------------------------",
+        "//": " Options for node-sass                    ",
+        "//": "------------------------------------------",
+        "options": {
+          "outputStyle": "compressed",
+          "outFile": "source/themes/app/holaluz/css/maps/application.css.map",
+          "sourceMap": true
+        }
+      }
+    ]
+  }
+
+}
