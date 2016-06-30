@@ -43,8 +43,8 @@
 
     "build:js" : "node ngr-assets-compiler.js build_js",
 
-    "watch:css": "nodemon --watch tests/src/css -e css,scss -x \"npm run build:css\"",
-    "watch:js" : "nodemon --watch tests/src/js -e js,jsx -x \"npm run build:js\"",
+    "watch:css": "nodemon --watch source/themes/app/holaluz/css/src -e css,scss -x \"npm run build:css\"",
+    "watch:js" : "nodemon --watch source/themes/app/holaluz/js/src -e js,jsx -x \"npm run build:js\"",
     "watch:all": "npm-run-all --parallel watch:js watch:css"
   },
 
