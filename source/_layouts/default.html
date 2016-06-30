@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body class="{% block body_classes '' %}">
+  {% include 'header.html' %}
+
+  <h1>Default layout</h1>
+  {% block content %}{% endblock %}
+
+  {% include 'footer.html' %}
+</body>
+</html>

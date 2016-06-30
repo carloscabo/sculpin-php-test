@@ -1,0 +1,7 @@
+sculpin:
+    permalink: pretty
+sculpin_content_types:
+    posts:
+        enabled: false
+sculpin_twig:
+    view_paths: ['_views', '_layouts', '_partials', '_includes', '_blocks']
