@@ -1,17 +1,19 @@
 ---
 layout: default
+body_classes: sample--page
 ---
-{% block body_classes 'sample--page' %}
+
 
   <h2>Sample page</h2>
   <img src="{{ theme_path("img/theme-placeholder.png") }}" alt="Image from theme">
   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, iure vel veniam in provident, quo saepe voluptate est aliquam, cum accusantium dolore consequatur. Placeat voluptas, maiores dolor repudiandae expedita rem aspernatur rerum ab vero error, incidunt voluptates quis provident repellendus quisquam impedit quia perspiciatis eius omnis, ea facilis, quae? Voluptas eveniet ratione dolorum, asperiores, alias cum blanditiis fugit non illum adipisci ipsa dolor deserunt culpa iusto iure mollitia cumque repellendus cupiditate nisi. Enim, excepturi, officia. Atque dolores nobis deleniti doloribus. Aspernatur obcaecati porro distinctio repellendus numquam fuga iusto suscipit optio dolorem eos omnis, doloribus officia, temporibus rerum, molestias blanditiis ut!</p>
 
-  <img src="assets/img/content.jpg" alt="Image from theme">
+  <img src="{{ theme_path("assets/img/content.jpg") }}" alt="Image from theme">
+  {# assets/img/content.jpg #}
 
   <hr>
 
-  {% set foo = 'bar' %}
+  {% set custom_var = 'Cuatom var content' %}
   {% include 'b_sample_template.html' %}
 
   {% include 'sample_block.html' %}

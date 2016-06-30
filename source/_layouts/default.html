@@ -5,7 +5,7 @@
   <title>Document</title>
   <link rel="stylesheet" href="{{ theme_path("css/application.min.css") }}" />
 </head>
-<body class="{% block body_classes '' %}">
+<body class="{{ page.body_classes }}">
   {% include 'header.html' %}
 
   <h1>Default layout</h1>
