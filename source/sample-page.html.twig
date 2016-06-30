@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-{%- block body_classes 'sample--page' %}
+{% block body_classes 'sample--page' %}
 
   <h2>Sample page</h2>
   <img src="{{ theme_path("img/theme-placeholder.png") }}" alt="Image from theme">
@@ -11,4 +11,7 @@ layout: default
 
   <hr>
 
+  {% set foo = 'bar' %}
   {% include 'b_sample_template.html' %}
+
+  {% include 'sample_block.html' %}
