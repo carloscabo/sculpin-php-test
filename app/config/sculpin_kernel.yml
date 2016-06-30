@@ -1,9 +1,9 @@
 sculpin:
-    permalink: pretty
+  permalink: pretty
 sculpin_theme:
-    theme: app/holaluz
+  theme: app/holaluz
 sculpin_content_types:
-    posts:
-        enabled: false
+  posts:
+    enabled: false
 sculpin_twig:
-    source_view_paths: ['_views', '_layouts', '_partials', '_includes', '_blocks']
+  source_view_paths: ['_views', '_layouts', '_partials', '_includes', '_blocks']
