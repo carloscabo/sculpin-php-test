@@ -43,8 +43,8 @@
 
     "build:js" : "node ngr-assets-compiler.js build_js",
 
-    "watch:css": "nodemon --watch source/themes/app/holaluz/css/src -e css,scss -x \"npm run build:css\"",
-    "watch:js" : "nodemon --watch source/themes/app/holaluz/js/src -e js,jsx -x \"npm run build:js\"",
+    "watch:css": "nodemon --watch source/themes/app/themename/css/src -e css,scss -x \"npm run build:css\"",
+    "watch:js" : "nodemon --watch source/themes/app/themename/js/src -e js,jsx -x \"npm run build:js\"",
     "watch:all": "npm-run-all --parallel watch:js watch:css"
   },
 
@@ -58,16 +58,16 @@
     "//": "------------------------------------------",
     "scripts": [
       {
-        "dest": "source/themes/app/holaluz/js/application.min.js",
+        "dest": "source/themes/app/themename/js/application.min.js",
         "files": [
-          "source/themes/app/holaluz/js/src/lib/mqbe.js",
-          "source/themes/app/holaluz/js/src/ready.js"
+          "source/themes/app/themename/js/src/lib/mqbe.js",
+          "source/themes/app/themename/js/src/ready.js"
         ],
         "//": "------------------------------------------",
         "//": " Options for Uglify-JS                    ",
         "//": "------------------------------------------",
         "options": {
-          "outSourceMap": "source/themes/app/holaluz/js/maps/application.js.map",
+          "outSourceMap": "source/themes/app/themename/js/maps/application.js.map",
           "sourceRoot": null,
           "warnings": false,
           "mangle": {
@@ -89,15 +89,15 @@
     "//": "------------------------------------------",
     "styles": [
       {
-        "src":  "source/themes/app/holaluz/css/src/application.scss",
-        "dest": "source/themes/app/holaluz/css/application.min.css",
+        "src":  "source/themes/app/themename/css/src/application.scss",
+        "dest": "source/themes/app/themename/css/application.min.css",
 
         "//": "------------------------------------------",
         "//": " Options for node-sass                    ",
         "//": "------------------------------------------",
         "options": {
           "outputStyle": "compressed",
-          "outFile": "source/themes/app/holaluz/css/maps/application.css.map",
+          "outFile": "source/themes/app/themename/css/maps/application.css.map",
           "sourceMap": true
         }
       }

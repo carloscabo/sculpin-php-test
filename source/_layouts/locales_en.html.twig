@@ -1,0 +1,14 @@
+{# Global language setting #}
+{% set lang = 'en' %}
+
+{# i18n string available to all pages using this template #}
+{%
+  set i18n = {
+    'en': {
+      'home_title': 'Home title from locale_en'
+    }
+  }
+%}
+
+{# Extend base template #}
+{% extends 'default_' ~ lang ~ '.html.twig' %}

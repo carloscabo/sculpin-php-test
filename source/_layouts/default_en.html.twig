@@ -1,6 +1,4 @@
 <!DOCTYPE html>
-{% set lang = 'en' %}
-{% include "locales_en.html.twig" %}
 <html lang="{{ lang }}">
 <head>
   <meta charset="UTF-8">
@@ -10,7 +8,7 @@
 <body class="{{ page.body_classes }} {{ lang }}">
   {% include 'header.html' %}
 
-  <h1>Default layout {{ lang }}</h1>
+  <h1>Default layout {{ lang }} {{ i18n.en.home_title }}</h1>
   {% block content %}{% endblock %}
 
   {% include 'footer.html' %}

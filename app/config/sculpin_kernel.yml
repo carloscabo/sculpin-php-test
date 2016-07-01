@@ -1,7 +1,7 @@
 sculpin:
   permalink: pretty
 sculpin_theme:
-  theme: app/holaluz
+  theme: app/themename
 sculpin_content_types:
   posts:
     enabled: false
